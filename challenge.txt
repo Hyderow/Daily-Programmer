@@ -1,0 +1,42 @@
+
+
+void addWordCount(char *word)
+{
+ for(i = 0; i < len; i++)
+  {
+    if(!strcmp(word, wordlist[i][0]))
+     {
+      wordlist[i][1]++;
+      return;
+     }
+  }
+
+  wordlist.append(word, 1);
+}
+
+
+int main()
+{
+FILE *f = fopen("book.txt", "rb");
+fseek(f, 0L, SEEK_END);
+int len = ftell(f);
+rewind(f);
+char *text = malloc(sizeof(char) * (len + 1));
+fscanf(f,"%s", text);
+fclose(f);
+
+int i = 0;
+for(i = 0; i < len; i++)
+{
+   if(strncmp(text[i], " ", 1) || strncmp(text[i], "\n", 1)
+    {
+      addWordCount(word);
+      word ="";
+    }
+    else {word.append(text[i]);}
+
+
+}
+
+
+}
